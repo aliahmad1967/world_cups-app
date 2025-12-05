@@ -2,6 +2,7 @@ import { Trophy } from 'lucide-react';
 
 export default function History() {
   const tournaments = [
+    { year: 2026, host: "كندا / المكسيك / الولايات المتحدة", winner: "قريباً", runnerUp: "-", score: "-" },
     { year: 2022, host: "قطر", winner: "الأرجنتين", runnerUp: "فرنسا", score: "3-3 (4-2)" },
     { year: 2018, host: "روسيا", winner: "فرنسا", runnerUp: "كرواتيا", score: "4-2" },
     { year: 2014, host: "البرازيل", winner: "ألمانيا", runnerUp: "الأرجنتين", score: "1-0" },
@@ -55,12 +56,12 @@ export default function History() {
               </div>
               <div className="col-span-3 flex items-center font-bold text-lg">
                  <span className="md:hidden font-bold ml-2 text-sm text-gray-500">البطل:</span>
-                 <Trophy className="w-5 h-5 text-[#daa520] ml-2" />
-                 {t.winner}
+                 {t.winner !== "قريباً" && <Trophy className="w-5 h-5 text-[#daa520] ml-2" />}
+                 <span className={t.winner === "قريباً" ? "text-gray-400 italic text-sm" : ""}>{t.winner}</span>
               </div>
               <div className="col-span-3 flex items-center font-medium text-gray-600">
                  <span className="md:hidden font-bold ml-2 text-sm text-gray-500">الوصيف:</span>
-                 <span className="w-2 h-2 bg-gray-300 rounded-full ml-2 hidden md:block"></span>
+                 {t.runnerUp !== "-" && <span className="w-2 h-2 bg-gray-300 rounded-full ml-2 hidden md:block"></span>}
                  {t.runnerUp}
               </div>
               <div className="col-span-3 md:text-left md:pl-4 font-mono text-gray-500 flex md:block items-center">
