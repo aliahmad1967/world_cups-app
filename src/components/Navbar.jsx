@@ -29,17 +29,19 @@ export default function Navbar() {
           </Link>
           
           {/* Navigation */}
-          <div className="hidden md:flex space-x-1 space-x-reverse h-full items-center">
+          <div className="hidden lg:flex space-x-1 space-x-reverse h-full items-center">
             <NavLink to="/" active={isActive('/')}>الرئيسية</NavLink>
             <NavLink to="/history" active={isActive('/history')}>البطولات</NavLink>
             <NavLink to="/matches" active={isActive('/matches')}>المباريات</NavLink>
-            <NavLink to="/news" active={isActive('/news')}>الأخبار</NavLink>
+            <NavLink to="/legends" active={isActive('/legends')}>الأساطير</NavLink>
+            <NavLink to="/stats" active={isActive('/stats')}>إحصائيات</NavLink>
+            <NavLink to="/memories" active={isActive('/memories')}>ذكريات</NavLink>
           </div>
 
           {/* Search/Action */}
           <div className="flex items-center space-x-4 space-x-reverse">
             <Search className="w-5 h-5 cursor-pointer hover:opacity-80" />
-            <button className="hidden lg:block border border-white/30 hover:bg-white hover:text-[#0455bf] px-4 py-1.5 rounded-full text-sm font-bold transition-all">
+            <button className="hidden md:block border border-white/30 hover:bg-white hover:text-[#0455bf] px-4 py-1.5 rounded-full text-sm font-bold transition-all">
               شراء التذاكر
             </button>
           </div>
@@ -53,7 +55,7 @@ function NavLink({ to, children, active }) {
   return (
     <Link 
       to={to} 
-      className={`h-16 flex items-center px-4 text-sm font-bold border-b-[3px] transition-colors ${
+      className={`h-16 flex items-center px-3 xl:px-4 text-sm font-bold border-b-[3px] transition-colors whitespace-nowrap ${
         active 
           ? 'border-[#32ccff] text-white' 
           : 'border-transparent text-white/80 hover:text-white'

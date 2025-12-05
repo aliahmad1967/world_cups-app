@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, ChevronLeft } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -34,7 +34,6 @@ export default function Home() {
           
           {/* Hero Visual Placeholder */}
           <div className="hidden lg:block relative">
-             {/* Using a placeholder div for standard image simulation */}
              <div className="aspect-[4/3] bg-gradient-to-tr from-blue-400 to-emerald-400 rounded-lg shadow-2xl opacity-20 transform rotate-3" />
              <div className="absolute inset-0 bg-blue-500/10 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/10">
                 <span className="text-white font-bold opacity-30 text-2xl">صورة البطولة</span>
@@ -43,34 +42,37 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Latest Highlights / Cards Section */}
+      {/* Latest Highlights */}
       <div className="container mx-auto px-6 py-20">
         <div className="flex justify-between items-end mb-10">
-          <h2 className="text-3xl font-black text-[#1a1a1a] uppercase tracking-tighter">أبرز المحطات</h2>
-          <Link to="/history" className="text-[#0455bf] font-bold hover:underline flex items-center text-sm">
-            عرض الكل <ChevronLeft className="w-4 h-4 mr-1" />
-          </Link>
+          <h2 className="text-3xl font-black text-[#1a1a1a] uppercase tracking-tighter">أقسام مميزة</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <NewsCard 
-            category="إحصائيات"
-            title="الأرقام القياسية في تاريخ كأس العالم"
-            date="منذ 1930"
-            imageColor="bg-red-500"
-          />
-          <NewsCard 
-            category="أساطير"
-            title="أعظم 10 هدافين في تاريخ البطولة"
-            date="تحديث مستمر"
-            imageColor="bg-emerald-500"
-          />
-          <NewsCard 
-            category="ذكريات"
-            title="مباريات نهائية لن ينساها التاريخ"
-            date="أرشيف كامل"
-            imageColor="bg-yellow-500"
-          />
+          <Link to="/stats">
+            <NewsCard 
+              category="إحصائيات"
+              title="سجل الأبطال وكل الأرقام القياسية"
+              date="تحديث شامل"
+              imageColor="bg-red-500"
+            />
+          </Link>
+          <Link to="/legends">
+            <NewsCard 
+              category="أساطير"
+              title="الهدافون التاريخيون لكأس العالم"
+              date="ميروسلاف كلوزه في الصدارة"
+              imageColor="bg-emerald-500"
+            />
+          </Link>
+          <Link to="/memories">
+            <NewsCard 
+              category="ذكريات"
+              title="لحظات لن ينساها التاريخ"
+              date="من 1930 إلى اليوم"
+              imageColor="bg-yellow-500"
+            />
+          </Link>
         </div>
       </div>
       
@@ -88,7 +90,6 @@ export default function Home() {
                </button>
              </div>
              <div className="md:w-1/2 bg-gray-200 min-h-[300px] relative">
-               {/* Image Placeholder */}
                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
                  صورة ترويجية 2026
                </div>
