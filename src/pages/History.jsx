@@ -1,59 +1,52 @@
-import { MapPin, Trophy } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 export default function History() {
   const tournaments = [
-    { year: 2022, host: "قطر", winner: "الأرجنتين", count: "3", color: "from-sky-600 to-white" },
-    { year: 2018, host: "روسيا", winner: "فرنسا", count: "2", color: "from-blue-700 to-red-600" },
-    { year: 2014, host: "البرازيل", winner: "ألمانيا", count: "4", color: "from-black to-yellow-500" },
-    { year: 2010, host: "جنوب أفريقيا", winner: "إسبانيا", count: "1", color: "from-red-600 to-yellow-400" },
-    { year: 2006, host: "ألمانيا", winner: "إيطاليا", count: "4", color: "from-green-600 to-red-600" },
-    { year: 2002, host: "كوريا / اليابان", winner: "البرازيل", count: "5", color: "from-yellow-400 to-green-600" },
-    { year: 1998, host: "فرنسا", winner: "فرنسا", count: "1", color: "from-blue-700 to-red-600" },
-    { year: 1994, host: "الولايات المتحدة", winner: "البرازيل", count: "4", color: "from-yellow-400 to-green-600" },
-    { year: 1990, host: "إيطاليا", winner: "ألمانيا الغربية", count: "3", color: "from-black to-yellow-500" },
-    { year: 1986, host: "المكسيك", winner: "الأرجنتين", count: "2", color: "from-sky-600 to-white" },
-    { year: 1982, host: "إسبانيا", winner: "إيطاليا", count: "3", color: "from-green-600 to-red-600" },
+    { year: 2022, host: "قطر", winner: "الأرجنتين", score: "3-3 (4-2)" },
+    { year: 2018, host: "روسيا", winner: "فرنسا", score: "4-2" },
+    { year: 2014, host: "البرازيل", winner: "ألمانيا", score: "1-0" },
+    { year: 2010, host: "جنوب أفريقيا", winner: "إسبانيا", score: "1-0" },
+    { year: 2006, host: "ألمانيا", winner: "إيطاليا", score: "1-1 (5-3)" },
+    { year: 2002, host: "كوريا / اليابان", winner: "البرازيل", score: "2-0" },
+    { year: 1998, host: "فرنسا", winner: "فرنسا", score: "3-0" },
+    { year: 1994, host: "الولايات المتحدة", winner: "البرازيل", score: "0-0 (3-2)" },
+    { year: 1990, host: "إيطاليا", winner: "ألمانيا الغربية", score: "1-0" },
+    { year: 1986, host: "المكسيك", winner: "الأرجنتين", score: "3-2" },
   ];
 
   return (
-    <div className="space-y-12">
-      <div className="text-center">
-        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-white to-slate-400 mb-4 inline-block">
-          سجل الأبطال
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-yellow-500 to-transparent mx-auto rounded-full" />
+    <div className="container mx-auto px-6 py-12">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+        <h2 className="text-4xl font-black text-[#1a1a1a] mb-4 md:mb-0">سجل النهائيات</h2>
+        <div className="flex space-x-2 space-x-reverse">
+          <button className="bg-[#0455bf] text-white px-6 py-2 rounded-full font-bold text-sm">عرض القائمة</button>
+          <button className="bg-white border border-gray-300 text-gray-700 px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-50">عرض الشبكة</button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {tournaments.map((t) => (
-          <div key={t.year} className="glass-card rounded-xl p-6 group relative overflow-hidden">
-             {/* Subtle flag gradient overlay */}
-            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${t.color}`} />
-            
-            <div className="flex justify-between items-start mb-6">
-              <span className="text-3xl font-black text-white/10 group-hover:text-white/20 transition-colors">
-                {t.year}
-              </span>
-              <Trophy className={`w-6 h-6 ${t.winner === 'البرازيل' ? 'text-yellow-400' : 'text-slate-400 group-hover:text-yellow-400'} transition-colors duration-300`} />
-            </div>
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+        {/* Table Header */}
+        <div className="grid grid-cols-12 bg-gray-50 py-4 px-6 border-b border-gray-200 text-sm font-bold text-gray-500 uppercase tracking-wider">
+          <div className="col-span-2">السنة</div>
+          <div className="col-span-3">المستضيف</div>
+          <div className="col-span-4">البطل</div>
+          <div className="col-span-3 text-left pl-4">النتيجة النهائية</div>
+        </div>
 
-            <div className="space-y-3">
-              <div className="flex items-center text-slate-300 group-hover:text-white transition-colors">
-                <span className="text-lg font-bold">{t.winner}</span>
-                {t.winner === 'الأرجنتين' && <span className="mr-2 text-xs bg-yellow-400/20 text-yellow-400 px-2 py-0.5 rounded-full">3 ⭐️</span>}
-                {t.winner === 'البرازيل' && <span className="mr-2 text-xs bg-yellow-400/20 text-yellow-400 px-2 py-0.5 rounded-full">5 ⭐️</span>}
+        {/* List Items */}
+        <div className="divide-y divide-gray-100">
+          {tournaments.map((t) => (
+            <div key={t.year} className="grid grid-cols-12 py-6 px-6 items-center hover:bg-blue-50/30 transition-colors group cursor-pointer text-[#1a1a1a]">
+              <div className="col-span-2 font-black text-xl text-[#0455bf]">{t.year}</div>
+              <div className="col-span-3 font-medium text-gray-600">{t.host}</div>
+              <div className="col-span-4 flex items-center font-bold">
+                 <Trophy className="w-4 h-4 text-[#daa520] ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                 {t.winner}
               </div>
-              
-              <div className="flex items-center text-sm text-slate-500">
-                <MapPin className="w-4 h-4 ml-1" />
-                <span>{t.host}</span>
-              </div>
+              <div className="col-span-3 text-left pl-4 font-mono text-gray-500">{t.score}</div>
             </div>
-
-            {/* Hover visual */}
-            <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-white/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-colors duration-500" />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
