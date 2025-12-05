@@ -12,6 +12,18 @@ export default function History() {
     { year: 1994, host: "الولايات المتحدة", winner: "البرازيل", runnerUp: "إيطاليا", score: "0-0 (3-2)" },
     { year: 1990, host: "إيطاليا", winner: "ألمانيا الغربية", runnerUp: "الأرجنتين", score: "1-0" },
     { year: 1986, host: "المكسيك", winner: "الأرجنتين", runnerUp: "ألمانيا الغربية", score: "3-2" },
+    { year: 1982, host: "إسبانيا", winner: "إيطاليا", runnerUp: "ألمانيا الغربية", score: "3-1" },
+    { year: 1978, host: "الأرجنتين", winner: "الأرجنتين", runnerUp: "هولندا", score: "3-1" },
+    { year: 1974, host: "ألمانيا الغربية", winner: "ألمانيا الغربية", runnerUp: "هولندا", score: "2-1" },
+    { year: 1970, host: "المكسيك", winner: "البرازيل", runnerUp: "إيطاليا", score: "4-1" },
+    { year: 1966, host: "إنجلترا", winner: "إنجلترا", runnerUp: "ألمانيا الغربية", score: "4-2" },
+    { year: 1962, host: "تشيلي", winner: "البرازيل", runnerUp: "تشيكوسلوفاكيا", score: "3-1" },
+    { year: 1958, host: "السويد", winner: "البرازيل", runnerUp: "السويد", score: "5-2" },
+    { year: 1954, host: "سويسرا", winner: "ألمانيا الغربية", runnerUp: "المجر", score: "3-2" },
+    { year: 1950, host: "البرازيل", winner: "أوروغواي", runnerUp: "البرازيل", score: "2-1" },
+    { year: 1938, host: "فرنسا", winner: "إيطاليا", runnerUp: "المجر", score: "4-2" },
+    { year: 1934, host: "إيطاليا", winner: "إيطاليا", runnerUp: "تشيكوسلوفاكيا", score: "2-1" },
+    { year: 1930, host: "أوروغواي", winner: "أوروغواي", runnerUp: "الأرجنتين", score: "4-2" },
   ];
 
   return (
